@@ -1,25 +1,14 @@
+import Image from "next/image";
+import { SITE, TOTAL_GOOGLE_REVIEWS, UNITS } from "@/lib/constants";
+import { IMAGENS } from "@/lib/images";
+import { formatReviewCount } from "@/lib/utils";
 import Reveal from "@/components/ui/Reveal";
 
-const testimonials = [
-  {
-    quote:
-      "Atendimento impecável do começo ao fim. Fiz meus implantes e resolvi tudo na mesma clínica, sem correria entre lugares.",
-    name: "Paciente · Unidade Asa Sul",
-    detail: "Implantes dentários",
-  },
-  {
-    quote:
-      "Sempre tive medo de dentista. A sedação e a equipe fizeram toda a diferença — foi tranquilo e sem dor.",
-    name: "Paciente · Unidade Águas Claras",
-    detail: "Sedação consciente",
-  },
-  {
-    quote:
-      "Estrutura de primeira e equipe muito atenciosa. As lentes ficaram naturais, exatamente como eu queria.",
-    name: "Paciente · Unidade Asa Norte",
-    detail: "Lentes de contato dental",
-  },
-];
+const unitImages: Record<string, string> = {
+  "aguas-claras": IMAGENS.unidades.aguasClaras,
+  "asa-sul": IMAGENS.unidades.asaSul,
+  "asa-norte": IMAGENS.unidades.asaNorte,
+};
 
 export default function Testimonials() {
   return (
@@ -28,29 +17,37 @@ export default function Testimonials() {
         <div className="max-w-2xl">
           <p className="kicker">Prova social e autoridade</p>
           <h2 className="mt-3 font-display text-display text-ink">
-            Mais de 790 avaliações no Google, nota média 4,9
+            Mais de {formatReviewCount(TOTAL_GOOGLE_REVIEWS)} avaliações no Google, nota média 4,9
           </h2>
           <p className="mt-4 max-w-prose text-ink-soft">
-            A confiança dos pacientes reforça nosso compromisso com atendimento humanizado e
-            resultados reais, em todas as unidades da Ianara Pinho Odontologia.
+            A confiança dos pacientes reforça nosso compromisso com atendimento humanizado,
+            dedicação, ética e resultados reais em Águas Claras, Asa Sul e Asa Norte.
           </p>
         </div>
 
         <div className="mt-14 grid gap-6 md:grid-cols-3">
-          {testimonials.map((t, i) => (
-            <Reveal key={t.name} delay={i * 0.08}>
-              <figure className="flex h-full flex-col justify-between rounded-2xl bg-white/70 p-8 shadow-[0_1px_0_rgba(26,35,33,0.06)]">
-                <div>
-                  <div className="text-brass" aria-label="5 estrelas">
+          {UNITS.map((unit, i) => (
+            <Reveal key={unit.slug} delay={i * 0.08}>
+              <figure className="overflow-hidden rounded-2xl bg-white shadow-[0_1px_0_rgba(26,35,33,0.06)]">
+                <div className="relative aspect-[4/3]">
+                  <Image
+                    src={unitImages[unit.slug]}
+                    alt={`${SITE.name} ${unit.name}`}
+                    fill
+                    className="object-cover"
+                    sizes="360px"
+                  />
+                </div>
+                <figcaption className="p-6 text-center">
+                  <p className="text-sm font-semibold text-ink">
+                    {formatReviewCount(unit.googleReviews)} Avaliações
+                  </p>
+                  <div className="mt-2 text-brass" aria-label="5 estrelas">
                     ★★★★★
                   </div>
-                  <blockquote className="mt-4 font-display text-lg leading-snug text-ink">
-                    “{t.quote}”
-                  </blockquote>
-                </div>
-                <figcaption className="mt-6 border-t border-ink/10 pt-4">
-                  <p className="text-sm font-medium text-ink">{t.name}</p>
-                  <p className="text-xs text-ink-soft">{t.detail}</p>
+                  <p className="mt-3 text-xs font-medium uppercase tracking-[0.12em] text-ink-soft">
+                    {SITE.name} {unit.name}
+                  </p>
                 </figcaption>
               </figure>
             </Reveal>

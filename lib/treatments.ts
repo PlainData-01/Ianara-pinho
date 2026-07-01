@@ -768,13 +768,13 @@ export const TREATMENTS: Treatment[] = [
     featured: true,
     metaTitle: "Dentista na Asa Sul em Brasília — Ianara Pinho",
     metaDescription:
-      "Dentista na Asa Sul em Brasília: atendimento completo no Centro Clínico Linea Vitta, SGAS 616. +750 avaliações. Ianara Pinho Odontologia.",
+      "Dentista na Asa Sul em Brasília: atendimento completo no Centro Clínico Linea Vitta, SGAS 616. +757 avaliações. Ianara Pinho Odontologia.",
     kicker: "Unidade Asa Sul",
     headline: "Dentista na Asa Sul: Clínica Odontológica Ianara Pinho",
     intro:
-      "Atendimento odontológico completo na Asa Sul, em Brasília DF, com estrutura moderna, equipe especializada e tratamentos em implantes, próteses, estética dental, ortodontia, alinhadores e muito mais. Mais de 750 avaliações positivas reforçam a confiança dos pacientes que procuram um dentista na Asa Sul.",
+      "Atendimento odontológico completo na Asa Sul, em Brasília DF, com estrutura moderna, equipe especializada e tratamentos em implantes, próteses, estética dental, ortodontia, alinhadores e muito mais. Mais de 757 avaliações positivas reforçam a confiança dos pacientes que procuram um dentista na Asa Sul.",
     benefits: [
-      "+750 avaliações positivas",
+      "+757 avaliações positivas",
       "Centro Clínico Linea Vitta, SGAS 616",
       "Atendimento completo em um só lugar",
       "Equipe especializada",
@@ -944,7 +944,7 @@ export const TREATMENTS: Treatment[] = [
     sections: [
       {
         title: "A confiança dos pacientes",
-        body: "Mais de 790 avaliações no Google com nota média de 4,9 estrelas reforçam nosso compromisso com atendimento humanizado e resultados reais.",
+        body: "Mais de 3.086 avaliações no Google com nota média de 4,9 estrelas reforçam nosso compromisso com atendimento humanizado e resultados reais.",
       },
     ],
     faq: [

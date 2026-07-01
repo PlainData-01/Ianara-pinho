@@ -107,6 +107,7 @@ export const UNITS = [
     building: "",
     address: "R. 7 Norte, 7 - Loja 21 - Águas Claras, Brasília - DF, 71908-180",
     mapsQuery: "R. 7 Norte, 7 - Loja 21 - Águas Claras, Brasília - DF, 71908-180",
+    googleReviews: 2034,
   },
   {
     slug: "asa-sul",
@@ -114,6 +115,7 @@ export const UNITS = [
     building: "Centro Clínico Linea Vitta",
     address: "SGAS 616 BL B Loja 05 - Asa Sul, Brasília - DF, 70200-760",
     mapsQuery: "SGAS II SGAS 616 BL B Loja 05 - Asa Sul, Brasília - DF, 70200-760",
+    googleReviews: 757,
   },
   {
     slug: "asa-norte",
@@ -122,8 +124,11 @@ export const UNITS = [
     address: "Setor SHLN Conj. I Bloco A, Loja 07 - Asa Norte, Brasília - DF, 70770-560",
     mapsQuery:
       "Edifício Biosphere - Setor SHLN Conj. I Bloco A, Loja 07 - Asa Norte, Brasília - DF, 70770-560",
+    googleReviews: 295,
   },
 ] as const;
+
+export const TOTAL_GOOGLE_REVIEWS = UNITS.reduce((sum, u) => sum + u.googleReviews, 0);
 
 export const TIMELINE = [
   {

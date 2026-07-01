@@ -20,7 +20,7 @@ export function organizationSchema() {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: "790",
+      reviewCount: "3086",
     },
     department: UNITS.map((u) => ({
       "@type": "Dentist",
